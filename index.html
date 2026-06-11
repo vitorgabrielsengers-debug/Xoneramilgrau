@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Xoneramilgrau - Canal Oficial</title>
+    <title>Xonera Mil Grau - Portal Oficial</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -11,15 +11,15 @@
             theme: {
                 extend: {
                     colors: {
-                        mc: {
-                            green: '#3c8527',
-                            'green-light': '#52b737',
-                            'green-dark': '#27561a',
-                            stone: '#1a1a1a',
-                            dark: '#111111',
-                            netherite: '#2d2d30',
-                            dirt: '#866043',
-                            wood: '#3a2b1d'
+                        xonera: {
+                            purple: '#a855f7',
+                            'purple-light': '#c084fc',
+                            'purple-dark': '#581c87',
+                            green: '#22c55e',
+                            'green-neon': '#39ff14',
+                            dark: '#09090b',
+                            netherite: '#18181b',
+                            stone: '#27272a'
                         }
                     },
                     fontFamily: {
@@ -35,7 +35,7 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Estilo de botão de bloco 3D do Minecraft */
+        /* Estilo de botão de bloco 3D do Minecraft (Xonera Style) */
         .mc-btn {
             position: relative;
             border-bottom: 4px solid var(--tw-shadow-color, #111);
@@ -46,90 +46,87 @@
             border-bottom-width: 2px;
             margin-bottom: 2px;
         }
-        /* Custom Scrollbar no estilo Minecraft */
+        /* Custom Scrollbar no estilo Netherite */
         ::-webkit-scrollbar {
             width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #111;
+            background: #09090b;
         }
         ::-webkit-scrollbar-thumb {
-            background: #3c8527;
-            border: 2px solid #111;
+            background: #a855f7;
+            border: 2px solid #09090b;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #52b737;
-        }
-        /* Estilo pixelado moderno */
-        .pixel-corners {
-            image-rendering: pixelated;
+            background: #c084fc;
         }
     </style>
 </head>
-<body class="bg-mc-dark text-gray-200 font-clean selection:bg-mc-green selection:text-white flex flex-col min-h-screen">
+<body class="bg-xonera-dark text-gray-200 font-clean selection:bg-xonera-purple selection:text-white flex flex-col min-h-screen">
 
     <!-- NAV BAR -->
-    <nav class="bg-mc-stone border-b-4 border-black sticky top-0 z-40 shadow-xl">
+    <nav class="bg-xonera-netherite border-b-4 border-black sticky top-0 z-40 shadow-xl">
         <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-4">
             <!-- Logo -->
             <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('home')">
-                <span class="text-3xl">⛏️</span>
-                <span class="font-pixel text-sm sm:text-base tracking-wider text-mc-green-light drop-shadow-[0_2px_0_#111]">Xonera<span class="text-white">milgrau</span></span>
+                <span class="text-3xl">🟣</span>
+                <span class="font-pixel text-xs sm:text-sm tracking-wider text-xonera-purple-light drop-shadow-[0_2px_0_#000]">XONERA<span class="text-xonera-green">_MIL_GRAU</span></span>
             </div>
             
             <!-- Menu de Abas -->
             <div class="flex gap-2 sm:gap-4 font-pixel text-[10px] sm:text-xs">
-                <button id="tab-home-btn" onclick="switchTab('home')" class="mc-btn shadow-mc-green-dark bg-mc-green hover:bg-mc-green-light text-white px-4 py-2.5 rounded-sm flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-house"></i> Início
+                <button id="tab-home-btn" onclick="switchTab('home')" class="mc-btn shadow-purple-950 bg-xonera-purple hover:bg-xonera-purple-light text-white px-4 py-2.5 rounded-sm flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-house"></i> Home
                 </button>
-                <button id="tab-videos-btn" onclick="switchTab('videos')" class="mc-btn shadow-zinc-950 bg-mc-netherite hover:bg-zinc-700 text-gray-300 px-4 py-2.5 rounded-sm flex items-center gap-2 cursor-pointer">
-                    <i class="fa-brands fa-youtube text-red-500"></i> Vídeos
+                <button id="tab-videos-btn" onclick="switchTab('videos')" class="mc-btn shadow-zinc-950 bg-zinc-800 hover:bg-zinc-700 text-gray-300 px-4 py-2.5 rounded-sm flex items-center gap-2 cursor-pointer">
+                    <i class="fa-brands fa-tiktok text-cyan-400"></i> Vídeos
                 </button>
-                <button id="tab-downloads-btn" onclick="switchTab('downloads')" class="mc-btn shadow-zinc-950 bg-mc-netherite hover:bg-zinc-700 text-gray-300 px-4 py-2.5 rounded-sm flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-download text-sky-400"></i> Downloads
+                <button id="tab-downloads-btn" onclick="switchTab('downloads')" class="mc-btn shadow-zinc-950 bg-zinc-800 hover:bg-zinc-700 text-gray-300 px-4 py-2.5 rounded-sm flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-download text-xonera-green"></i> Modpacks
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- ADMIN STATUS BANNER -->
-    <div id="admin-banner" class="hidden bg-yellow-600 text-black text-center font-pixel text-[10px] py-1.5 px-4 flex justify-between items-center z-50">
-        <span><i class="fa-solid fa-lock-open mr-2"></i> MODO ADMINISTRADOR ATIVADO</span>
+    <div id="admin-banner" class="hidden bg-xonera-purple text-white text-center font-pixel text-[10px] py-1.5 px-4 flex justify-between items-center z-50">
+        <span><i class="fa-solid fa-lock-open mr-2"></i> CONTROLE MIL GRAU ATIVADO (SÓ PROS DE VERDADE)</span>
         <button onclick="logoutAdmin()" class="bg-black text-white px-2 py-0.5 rounded hover:bg-zinc-800 text-[9px] cursor-pointer">Sair</button>
     </div>
 
     <!-- HERO SECTION -->
     <header class="relative bg-zinc-950 border-b-4 border-black py-16 px-4 overflow-hidden shadow-2xl">
-        <!-- Background Decorativo estilo Grade de Blocos -->
-        <div class="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(rgba(255,255,255,0.05)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.05)_1px,_transparent_1px)] bg-[size:32px_32px]"></div>
-        <div class="absolute -bottom-10 -right-10 text-9xl opacity-5 select-none pointer-events-none font-pixel">⚔️</div>
-        <div class="absolute -top-10 -left-10 text-9xl opacity-5 select-none pointer-events-none font-pixel">💎</div>
-
+        <div class="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(rgba(168,85,247,0.1)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(168,85,247,0.1)_1px,_transparent_1px)] bg-[size:32px_32px]"></div>
+        
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <!-- Emblema de Categoria -->
-            <div class="inline-flex items-center gap-2 bg-mc-green/20 border-2 border-mc-green text-mc-green-light px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-6">
-                <i class="fa-brands fa-youtube animate-pulse"></i> Canal Oficial
+            <div class="inline-flex items-center gap-2 bg-xonera-purple/20 border-2 border-xonera-purple text-xonera-purple-light px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-6">
+                <i class="fa-brands fa-tiktok animate-pulse text-pink-500"></i> 100% focado em mods bizarros
             </div>
             
-            <h1 class="font-pixel text-2xl md:text-4xl text-white mb-4 drop-shadow-[0_4px_0_#27561a]">
-                Se aventure comigo no <span class="text-mc-green-light">Minecraft!</span>
+            <h1 class="font-pixel text-xl md:text-3xl text-white mb-4 drop-shadow-[0_4px_0_#581c87]">
+                Se o seu PC <span class="text-xonera-purple-light">não virar uma torradeira</span>, o modpack é fraco!
             </h1>
-            <p class="text-gray-400 text-lg max-w-xl mx-auto mb-8 font-light">
-                Bem-vindo ao meu canal! Aqui você encontra vídeos sobre Minecraft, mods, builds e muito mais, criador do Xomaps, Xomembers, e mais!!!
+            <p class="text-gray-400 text-base max-w-xl mx-auto mb-8 font-light">
+                O melhor do Minecraft com mods, séries insanas, o lendário Create e downloads otimizados para PC fraco de verdade.
             </p>
 
-            <!-- Video em Destaque Integrado -->
-            <div class="max-w-2xl mx-auto bg-mc-stone border-4 border-mc-netherite rounded p-3 shadow-inner shadow-[0_0_25px_rgba(60,133,39,0.15)] group transition hover:border-mc-green">
-                <div class="aspect-video w-full rounded overflow-hidden shadow-2xl relative bg-black">
-                    <iframe id="hero-iframe" class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <!-- Video em Destaque Integrado (Hero Player com Capa clicável) -->
+            <div class="max-w-2xl mx-auto bg-xonera-netherite border-4 border-xonera-stone rounded p-3 shadow-inner shadow-[0_0_25px_rgba(168,85,247,0.15)] group transition hover:border-xonera-purple">
+                <div id="hero-player-container" onclick="playHeroVideo()" class="aspect-video w-full rounded overflow-hidden shadow-2xl relative bg-black cursor-pointer group/hero">
+                    <img id="hero-thumbnail" src="" class="w-full h-full object-cover transition duration-300 group-hover/hero:scale-105" alt="Capa do Vídeo Destaque">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center transition duration-300 group-hover/hero:bg-black/20">
+                        <div class="w-16 h-16 bg-xonera-purple border-b-4 border-purple-950 group-hover/hero:bg-xonera-purple-light rounded flex items-center justify-center shadow-lg transition transform group-hover/hero:scale-110">
+                            <i class="fa-solid fa-play text-white text-2xl ml-1"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 px-2">
-                    <div class="text-left">
-                        <p class="text-xs font-pixel text-mc-green-light">🎯 VÍDEO EM DESTAQUE</p>
-                        <h3 id="hero-title" class="text-sm font-bold text-white mt-1">Como Sobreviver 100 Dias no Hardcore com Novos Mods</h3>
+                    <div class="text-left w-full">
+                        <p class="text-xs font-pixel text-xonera-purple-light">🗣️ VÍDEO NO YOUTUBE</p>
+                        <h3 id="hero-title" class="text-sm font-bold text-white mt-1">Carregando vídeo...</h3>
                     </div>
-                    <a href="https://www.tiktok.com/@xoneramilgrau" target="_blank" class="mc-btn shadow-red-950 bg-red-600 hover:bg-red-500 text-white font-pixel text-[10px] px-4 py-2.5 rounded flex items-center gap-2 cursor-pointer shrink-0">
-                        <i class="fa-brands fa-youtube"></i> SEGUIR
+                    <a href="https://www.tiktok.com/@xoneramilgrau" target="_blank" class="mc-btn shadow-purple-950 bg-xonera-purple hover:bg-xonera-purple-light text-white font-pixel text-[10px] px-4 py-2.5 rounded flex items-center gap-2 cursor-pointer shrink-0">
+                        <i class="fa-brands fa-tiktok"></i> SEGUIR NO TIKTOK
                     </a>
                 </div>
             </div>
@@ -140,111 +137,120 @@
     <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-12">
         
         <!-- ================= ABA 1: HOME ================= -->
-        <section id="tab-home" class="space-y-12 animate-fadeIn">
-            <!-- Grid de Infos Principais -->
+        <section id="tab-home" class="space-y-12">
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card de Apresentação -->
-                <div class="md:col-span-2 bg-mc-stone border-4 border-mc-netherite p-6 rounded-lg relative overflow-hidden shadow-lg">
-                    <div class="absolute top-4 right-4 text-4xl opacity-10 font-pixel">📖</div>
-                    <h2 class="font-pixel text-base text-mc-green-light mb-4 flex items-center gap-2">
-                        <span>🌱</span> Sobre o Canal
-                    </h2>
-                    <div class="space-y-4 text-gray-300 leading-relaxed text-sm">
-                        <p>
-                            Eae galera, beleza! Eu sou o criador do canal <strong>Quicky</strong>. Aqui você vai encontrar diversas gameplays de Minecraft, desde o survivalzão até um modpack insano tipo o <strong>ATM</strong>
-                        </p>
-                        <p>
-                            Foco total em trazer gameplays de qualidade pra vocês, e muita diversão é claro kk. Se você gosta de Mine, com certeza você tá no canal certo!
-                        </p>
+                <!-- Card de Apresentação (Com espaço reservado para a Foto do Xonera) -->
+                <div class="md:col-span-2 bg-xonera-netherite border-4 border-xonera-stone p-6 rounded-lg relative overflow-hidden shadow-lg flex flex-col md:flex-row gap-6">
+                    
+                    <!-- ESPAÇO DA FOTO DO XONERA -->
+                    <div class="w-full md:w-48 shrink-0 flex flex-col items-center">
+                        <div class="w-40 h-48 bg-zinc-900 border-4 border-xonera-purple/60 rounded overflow-hidden relative group shadow-md shadow-purple-950/20">
+                            <!-- Substitua o 'src' abaixo pelo link direto da imagem real dele -->
+                            <img src="/midia/xonera.jpg" alt="Xonera Mil Grau" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <div class="absolute bottom-0 inset-x-0 bg-black/85 text-center text-[8px] font-pixel text-xonera-purple-light py-1 border-t border-xonera-purple/30">
+                                XONERA MIL GRAU
+                            </div>
+                        </div>
+                        <span class="text-[9px] text-gray-500 font-pixel mt-2 text-center uppercase tracking-wider"> </span>
                     </div>
 
-                    <!-- Métricas Estilizadas -->
-                    <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-zinc-800 text-center">
-                        <div class="bg-mc-dark p-3 rounded border border-zinc-800">
-                            <p class="font-pixel text-lg text-white">1X</p>
-                            <p class="text-[10px] text-gray-500 font-semibold uppercase mt-1">Semanal</p>
+                    <!-- Texto de Apresentação -->
+                    <div class="flex-grow flex flex-col justify-between">
+                        <div>
+                            <h2 class="font-pixel text-base text-xonera-purple-light mb-4 flex items-center gap-2">
+                                <span>👾</span> O Canal do Xonera
+                            </h2>
+                            <div class="space-y-4 text-gray-300 leading-relaxed text-sm">
+                                <p>
+                                    Salve rapaziada! Eu sou o <strong>Xonera</strong>. Se você veio aqui procurando modpacks otimizados que rodam até em uma batata, dicas de automação com o Create ou quer ver o peso de uma espada bizarra do Avaritia, você caiu no lugar certo!
+                                </p>
+                                <p>
+                                    Meus conteúdos são feitos para quem ama o Minecraft de um jeito diferenciado, sem enrolação e focado na diversão absurda. Dá uma olhada nos meus modpacks oficiais e nos vídeos rápidos do TikTok e YouTube!
+                                </p>
+                            </div>
                         </div>
-                        <div class="bg-mc-dark p-3 rounded border border-zinc-800">
-                            <p class="font-pixel text-lg text-mc-green-light">Minecraft</p>
-                            <p class="text-[10px] text-gray-500 font-semibold uppercase mt-1">Foco</p>
-                        </div>
-                        <div class="bg-mc-dark p-3 rounded border border-zinc-800">
-                            <p class="font-pixel text-lg text-sky-400">144p-1080p</p>
-                            <p class="text-[10px] text-gray-500 font-semibold uppercase mt-1">Qualidade</p>
+
+                        <!-- Métricas Estilizadas -->
+                        <div class="grid grid-cols-3 gap-4 mt-6 pt-4 border-t border-zinc-800 text-center">
+                            <div class="bg-xonera-dark p-3 rounded border border-zinc-800">
+                                <p class="font-pixel text-base text-white">🔥</p>
+                                <p class="text-[9px] text-gray-500 font-semibold uppercase mt-1">Mil Grau</p>
+                            </div>
+                            <div class="bg-xonera-dark p-3 rounded border border-zinc-800">
+                                <p class="font-pixel text-base text-xonera-green">100%</p>
+                                <p class="text-[9px] text-gray-500 font-semibold uppercase mt-1">Otimizado</p>
+                            </div>
+                            <div class="bg-xonera-dark p-3 rounded border border-zinc-800">
+                                <p class="font-pixel text-base text-xonera-purple-light">PC Batata</p>
+                                <p class="text-[9px] text-gray-500 font-semibold uppercase mt-1">Roda Liso</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card de Redes Sociais -->
-                <div class="bg-mc-stone border-4 border-mc-netherite p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                <div class="bg-xonera-netherite border-4 border-xonera-stone p-6 rounded-lg shadow-lg flex flex-col justify-between">
                     <div>
-                        <h2 class="font-pixel text-base text-sky-400 mb-6 flex items-center gap-2">
-                            <span>📡</span> Minhas Redes
+                        <h2 class="font-pixel text-base text-xonera-purple-light mb-6 flex items-center gap-2">
+                            <span>📡</span> Segue o Xonera
                         </h2>
                         <div class="space-y-3">
-                            <a href="https://tiktok.com" target="_blank" class="flex items-center gap-3 p-3 bg-zinc-900 hover:bg-[#9146FF]/20 border border-zinc-800 hover:border-[#9146FF] rounded transition group">
-                                <i class="fa-brands fa-tiktok text-2xl text-[#9146FF] group-hover:scale-110 transition"></i>
-                                <span class="font-semibold text-sm">Lives no TikTok</span>
+                            <a href="https://www.tiktok.com/@xoneramilgrau" target="_blank" class="flex items-center gap-3 p-3 bg-zinc-900 hover:bg-xonera-purple/20 border border-zinc-800 hover:border-xonera-purple rounded transition group">
+                                <i class="fa-brands fa-tiktok text-2xl text-purple-400 group-hover:scale-110 transition"></i>
+                                <span class="font-semibold text-sm">TikTok Oficial</span>
                             </a>
-                            <a href="https://discord.gg" target="_blank" class="flex items-center gap-3 p-3 bg-zinc-900 hover:bg-[#5865F2]/20 border border-zinc-800 hover:border-[#5865F2] rounded transition group">
-                                <i class="fa-brands fa-discord text-2xl text-[#5865F2] group-hover:scale-110 transition"></i>
-                                <span class="font-semibold text-sm">Server do Discord</span>
-                            </a>
-                            <a href="https://instagram.com" target="_blank" class="flex items-center gap-3 p-3 bg-zinc-900 hover:bg-pink-500/20 border border-zinc-800 hover:border-pink-500 rounded transition group">
-                                <i class="fa-brands fa-instagram text-2xl text-pink-500 group-hover:scale-110 transition"></i>
-                                <span class="font-semibold text-sm">Segue lá no Instagram</span>
+                            <a href="https://youtube.com/@XoneraMilGrau" target="_blank" class="flex items-center gap-3 p-3 bg-zinc-900 hover:bg-red-500/20 border border-zinc-800 hover:border-red-500 rounded transition group">
+                                <i class="fa-brands fa-youtube text-2xl text-red-500 group-hover:scale-110 transition"></i>
+                                <span class="font-semibold text-sm">Canal no YouTube</span>
                             </a>
                             <a href="https://twitch.tv" target="_blank" class="flex items-center gap-3 p-3 bg-zinc-900 hover:bg-[#9146FF]/20 border border-zinc-800 hover:border-[#9146FF] rounded transition group">
                                 <i class="fa-brands fa-twitch text-2xl text-[#9146FF] group-hover:scale-110 transition"></i>
-                                <span class="font-semibold text-sm">Lives na Twitch</span>
+                                <span class="font-semibold text-sm">Twitch Lives</span>
                             </a>
-
-                        </div> 
+                        </div>
                     </div>
 
                     <div class="mt-6 pt-4 border-t border-zinc-800 text-center">
-                        <span class="text-xs text-gray-500">Contato Comercial:</span>
-                        <a href="mailto:contato@craftzone.com" class="block text-mc-green-light hover:underline font-semibold mt-1">contato@craftzone.com</a>
+                        <span class="text-xs text-gray-500">E-mail de Contato:</span>
+                        <a href="mailto:contato@xoneramilgrau.com" class="block text-xonera-purple-light hover:underline font-semibold mt-1">xonera@milgrau.com</a>
                     </div>
                 </div>
             </div>
 
             <!-- Horários de Publicação & Lives -->
-            <div class="bg-mc-stone border-4 border-mc-netherite p-8 rounded-lg shadow-xl relative overflow-hidden">
-                <div class="absolute -bottom-6 -left-6 text-7xl opacity-5 select-none pointer-events-none font-pixel">⏱️</div>
-                <h2 class="font-pixel text-base text-yellow-500 mb-6 flex items-center gap-2">
-                    <span>📅</span> Cronograma de Conteúdo
+            <div class="bg-xonera-netherite border-4 border-xonera-stone p-8 rounded-lg shadow-xl relative overflow-hidden">
+                <h2 class="font-pixel text-base text-xonera-green mb-6 flex items-center gap-2">
+                    <span>📅</span> Agenda do Xonera
                 </h2>
                 
                 <div class="grid sm:grid-cols-3 gap-6">
-                    <div class="bg-mc-dark p-4 rounded border-l-4 border-mc-green shadow-md">
-                        <span class="font-pixel text-xs text-mc-green-light">POR MÊS VAI TER</span>
-                        <p class="font-bold text-white mt-1 text-base">100 Dias</p>
-                        <p class="text-xs text-gray-400 mt-2">A cada mês vai ter pelo menos um vídeo de 100 dias de um modpack</p>
+                    <div class="bg-xonera-dark p-4 rounded border-l-4 border-xonera-purple shadow-md">
+                        <span class="font-pixel text-xs text-xonera-purple-light">TODO DIA</span>
+                        <p class="font-bold text-white mt-1 text-base">Cortes no TikTok</p>
+                        <p class="text-xs text-gray-400 mt-2">Dicas rápidas de mods e curiosidades bizarras sobre o Minecraft.</p>
                     </div>
-                    <div class="bg-mc-dark p-4 rounded border-l-4 border-sky-400 shadow-md">
-                        <span class="font-pixel text-xs text-sky-400">SÁBADOS OU DOMINGOS</span>
-                        <p class="font-bold text-white mt-1 text-base">Lives ao Vivo</p>
-                        <p class="text-xs text-gray-400 mt-2">Não tem horários definidos para começar nem acabar kk </p>
+                    <div class="bg-xonera-dark p-4 rounded border-l-4 border-xonera-green shadow-md">
+                        <span class="font-pixel text-xs text-xonera-green">VÍDEO LONGO</span>
+                        <p class="font-bold text-white mt-1 text-base">Séries no YT</p>
+                        <p class="text-xs text-gray-400 mt-2">Vídeo novo testando modpacks épicos e avançando no Create.</p>
                     </div>
-                    <div class="bg-mc-dark p-4 rounded border-l-4 border-yellow-500 shadow-md">
-                        <span class="font-pixel text-xs text-yellow-500"></span>
-                        <p class="font-bold text-white mt-1 text-base"></p>
-                        <p class="text-xs text-gray-400 mt-2">Interação com a comunidade e construção de projetos épicos ao vivo.</p>
+                    <div class="bg-xonera-dark p-4 rounded border-l-4 border-purple-500 shadow-md">
+                        <span class="font-pixel text-xs text-purple-400">FINS DE SEMANA</span>
+                        <p class="font-bold text-white mt-1 text-base">Lives de Gameplay</p>
+                        <p class="text-xs text-gray-400 mt-2">Jogando com inscritos e quebrando o limite de FPS do computador.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ================= ABA 2: VÍDEOS (CRUD) ================= -->
-        <section id="tab-videos" class="hidden space-y-8 animate-fadeIn">
+        <section id="tab-videos" class="hidden space-y-8">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b-2 border-zinc-800 pb-4">
                 <div>
-                    <h2 class="font-pixel text-lg text-mc-green-light">🎥 Galeria de Vídeos</h2>
-                    <p class="text-gray-400 text-sm mt-1">Acompanhe as últimas publicações diretamente do nosso banco de dados.</p>
+                    <h2 class="font-pixel text-lg text-xonera-purple-light">🎥 Vídeos em Destaque</h2>
+                    <p class="text-gray-400 text-sm mt-1">Dá o play e confere as reviews de mods e as automações mais loucas.</p>
                 </div>
-                <!-- Botão de Criar (Visível apenas se Admin) -->
-                <button id="add-video-btn" onclick="openModal('video')" class="hidden mc-btn shadow-mc-green-dark bg-mc-green hover:bg-mc-green-light text-white font-pixel text-xs px-4 py-2.5 rounded cursor-pointer">
+                <button id="add-video-btn" onclick="openModal('video')" class="hidden mc-btn shadow-purple-950 bg-xonera-purple hover:bg-xonera-purple-light text-white font-pixel text-xs px-4 py-2.5 rounded cursor-pointer">
                     <i class="fa-solid fa-plus mr-1"></i> ADICIONAR VÍDEO
                 </button>
             </div>
@@ -256,14 +262,13 @@
         </section>
 
         <!-- ================= ABA 3: DOWNLOADS (CRUD) ================= -->
-        <section id="tab-downloads" class="hidden space-y-8 animate-fadeIn">
+        <section id="tab-downloads" class="hidden space-y-8">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b-2 border-zinc-800 pb-4">
                 <div>
-                    <h2 class="font-pixel text-lg text-sky-400">📦 Modpacks & Utilidades</h2>
-                    <p class="text-gray-400 text-sm mt-1">Baixe os pacotes de modificações oficiais que usamos nos vídeos do canal.</p>
+                    <h2 class="font-pixel text-lg text-xonera-green">📦 Modpacks Oficiais</h2>
+                    <p class="text-gray-400 text-sm mt-1">Baixe os pacotes criados pelo Xonera, super otimizados para PC fraco.</p>
                 </div>
-                <!-- Botão de Criar (Visível apenas se Admin) -->
-                <button id="add-download-btn" onclick="openModal('download')" class="hidden mc-btn shadow-sky-950 bg-sky-600 hover:bg-sky-500 text-white font-pixel text-xs px-4 py-2.5 rounded cursor-pointer">
+                <button id="add-download-btn" onclick="openModal('download')" class="hidden mc-btn shadow-green-950 bg-xonera-green hover:bg-green-500 text-white font-pixel text-xs px-4 py-2.5 rounded cursor-pointer">
                     <i class="fa-solid fa-plus mr-1"></i> ADICIONAR MODPACK
                 </button>
             </div>
@@ -276,34 +281,50 @@
 
     </main>
 
+    <!-- CINEMA LIGHTBOX MODAL (Para reproduzir os vídeos com perfeição) -->
+    <div id="cinema-modal" class="hidden fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4">
+        <div class="relative w-full max-w-4xl bg-xonera-netherite border-4 border-xonera-stone p-2 rounded shadow-2xl">
+            <!-- Botão Fechar -->
+            <button onclick="closeCinema()" class="absolute -top-12 right-0 text-white hover:text-red-500 font-pixel text-xs flex items-center gap-2 cursor-pointer bg-xonera-netherite px-3 py-2 border-2 border-zinc-800 rounded">
+                <i class="fa-solid fa-xmark"></i> FECHAR CINEMA
+            </button>
+            <!-- Player -->
+            <div class="aspect-video w-full bg-black rounded overflow-hidden">
+                <iframe id="cinema-iframe" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- Título do Vídeo no Modal -->
+            <div class="p-3 bg-xonera-dark mt-2 rounded">
+                <h4 id="cinema-title" class="text-sm font-bold text-white font-pixel text-[11px] leading-relaxed">Carregando título...</h4>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER -->
-    <footer class="bg-mc-stone border-t-4 border-black py-8 mt-auto shadow-inner relative">
+    <footer class="bg-xonera-netherite border-t-4 border-black py-8 mt-auto shadow-inner relative">
         <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-2 font-pixel text-xs text-gray-500">
-                <span>⛏️</span> <span>© 2026 CRAFTZONE. TODOS OS DIREITOS RESERVADOS.</span>
+                <span>⛏️</span> <span>© 2026 XONERA ZONE. FEITO PARA OS VERDADEIROS JOGADORES.</span>
             </div>
-            
-            <!-- Botão Admin -->
-            <button onclick="triggerAdmin()" class="text-gray-500 hover:text-mc-green-light transition text-sm flex items-center gap-2 cursor-pointer p-2 rounded">
-                <i class="fa-solid fa-gear"></i> <span class="font-pixel text-[10px]">Gerenciar Site</span>
+            <button onclick="triggerAdmin()" class="text-gray-500 hover:text-xonera-purple-light transition text-sm flex items-center gap-2 cursor-pointer p-2 rounded">
+                <i class="fa-solid fa-gear"></i> <span class="font-pixel text-[10px]">Painel Mil Grau</span>
             </button>
         </div>
     </footer>
 
     <!-- MODAL DE LOGIN ADMIN -->
     <div id="login-modal" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
-        <div class="bg-mc-stone border-4 border-mc-netherite rounded p-6 max-w-sm w-full shadow-2xl relative">
+        <div class="bg-xonera-netherite border-4 border-xonera-stone rounded p-6 max-w-sm w-full shadow-2xl relative">
             <button onclick="closeModal('login')" class="absolute top-4 right-4 text-gray-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
-            <h3 class="font-pixel text-xs text-yellow-500 mb-6 flex items-center gap-2">
+            <h3 class="font-pixel text-xs text-xonera-purple-light mb-6 flex items-center gap-2">
                 <span>🔒</span> Login Administrativo
             </h3>
             <div class="space-y-4 font-pixel text-[10px]">
                 <div>
-                    <label class="block text-gray-400 mb-2">SENHA DE ACESSO:</label>
-                    <input type="password" id="admin-pass" placeholder="Digite a senha..." class="w-full bg-mc-dark border-2 border-zinc-800 rounded p-3 text-white focus:border-mc-green outline-none text-xs">
+                    <label class="block text-gray-400 mb-2">SENHA SECRETA DO XONERA:</label>
+                    <input type="password" id="admin-pass" placeholder="Digite a senha..." class="w-full bg-xonera-dark border-2 border-zinc-800 rounded p-3 text-white focus:border-xonera-purple outline-none text-xs">
                 </div>
                 <div class="pt-4 flex gap-3">
-                    <button onclick="validateAdmin()" class="flex-grow mc-btn shadow-mc-green-dark bg-mc-green hover:bg-mc-green-light text-white py-3 rounded cursor-pointer">ENTRAR</button>
+                    <button onclick="validateAdmin()" class="flex-grow mc-btn shadow-purple-950 bg-xonera-purple hover:bg-xonera-purple-light text-white py-3 rounded cursor-pointer">ENTRAR</button>
                     <button onclick="closeModal('login')" class="bg-zinc-800 hover:bg-zinc-700 text-gray-400 px-4 py-3 rounded cursor-pointer">VOLTAR</button>
                 </div>
             </div>
@@ -312,9 +333,9 @@
 
     <!-- MODAL DE FORMULÁRIO CRUD (VÍDEO) -->
     <div id="video-modal" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-mc-stone border-4 border-mc-netherite rounded p-6 max-w-md w-full shadow-2xl relative my-8">
+        <div class="bg-xonera-netherite border-4 border-xonera-stone rounded p-6 max-w-md w-full shadow-2xl relative my-8">
             <button onclick="closeModal('video')" class="absolute top-4 right-4 text-gray-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
-            <h3 id="video-modal-title" class="font-pixel text-xs text-mc-green-light mb-6 flex items-center gap-2">
+            <h3 id="video-modal-title" class="font-pixel text-xs text-xonera-purple-light mb-6 flex items-center gap-2">
                 <span>🎥</span> Adicionar Vídeo
             </h3>
             
@@ -322,31 +343,33 @@
                 <input type="hidden" id="video-id">
                 <div>
                     <label class="block text-xs font-semibold text-gray-400 mb-1">Título do Vídeo:</label>
-                    <input type="text" id="video-title" required placeholder="Ex: Sobrevivendo 100 dias no espaço" class="w-full bg-mc-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-mc-green outline-none">
+                    <input type="text" id="video-title" required placeholder="Ex: QUAL PESO DA ESPADA DO AVARITIA??" class="w-full bg-xonera-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-xonera-purple outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-gray-400 mb-1">Link do YouTube (Watch ou Embed):</label>
-                    <input type="url" id="video-url" required placeholder="Ex: https://www.youtube.com/watch?v=..." class="w-full bg-mc-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-mc-green outline-none">
+                    <label class="block text-xs font-semibold text-gray-400 mb-1">Link do YouTube ou TikTok:</label>
+                    <input type="url" id="video-url" required placeholder="Ex: https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="w-full bg-xonera-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-xonera-purple outline-none">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 mb-1">Duração (Opcional):</label>
+                        <input type="text" id="video-duration" placeholder="Ex: 15:08" class="w-full bg-xonera-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-xonera-purple outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 mb-1">Visualizações (Opcional):</label>
+                        <input type="text" id="video-views" placeholder="Ex: 5K" class="w-full bg-xonera-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-xonera-purple outline-none">
+                    </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-gray-400 mb-1">Duração (Opcional):</label>
-                    <input type="text" id="video-duration" placeholder="Ex: 24:15" class="w-full bg-mc-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-mc-green outline-none">
+                    <label class="block text-xs font-semibold text-gray-400 mb-1">Descrição / Comentário Mil Grau:</label>
+                    <textarea id="video-desc" rows="3" placeholder="Insira o resumo ou links do vídeo..." class="w-full bg-xonera-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-xonera-purple outline-none resize-none"></textarea>
                 </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-400 mb-1">Visualizações (Opcional):</label>
-                    <input type="text" id="video-views" placeholder="Ex: 15K" class="w-full bg-mc-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-mc-green outline-none">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-400 mb-1">Descrição / Notas do Vídeo:</label>
-                    <textarea id="video-desc" rows="3" placeholder="Insira o resumo ou links do vídeo..." class="w-full bg-mc-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-mc-green outline-none resize-none"></textarea>
-                </div>
-                <div class="flex items-center gap-2 bg-mc-dark/40 p-2.5 rounded border border-zinc-800/80">
-                    <input type="checkbox" id="video-featured" class="w-4 h-4 text-mc-green bg-mc-dark rounded border-zinc-800 focus:ring-0">
-                    <label for="video-featured" class="text-xs text-gray-400 font-semibold cursor-pointer select-none">Definir como Destaque do Topo (Hero)</label>
+                <div class="flex items-center gap-2 bg-xonera-dark/40 p-2.5 rounded border border-zinc-800/80">
+                    <input type="checkbox" id="video-featured" class="w-4 h-4 text-xonera-purple bg-xonera-dark rounded border-zinc-800 focus:ring-0">
+                    <label for="video-featured" class="text-xs text-gray-400 font-semibold cursor-pointer select-none">Definir como Vídeo Destaque do Topo</label>
                 </div>
 
                 <div class="pt-4 flex gap-3 font-pixel text-[10px]">
-                    <button type="submit" class="flex-grow mc-btn shadow-mc-green-dark bg-mc-green hover:bg-mc-green-light text-white py-3 rounded cursor-pointer">SALVAR ALTERAÇÕES</button>
+                    <button type="submit" class="flex-grow mc-btn shadow-purple-950 bg-xonera-purple hover:bg-xonera-purple-light text-white py-3 rounded cursor-pointer">SALVAR ALTERAÇÕES</button>
                     <button type="button" onclick="closeModal('video')" class="bg-zinc-800 hover:bg-zinc-700 text-gray-400 px-4 py-3 rounded cursor-pointer">CANCELAR</button>
                 </div>
             </form>
@@ -355,39 +378,39 @@
 
     <!-- MODAL DE FORMULÁRIO CRUD (DOWNLOAD/MODPACK) -->
     <div id="download-modal" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-mc-stone border-4 border-mc-netherite rounded p-6 max-w-md w-full shadow-2xl relative my-8">
+        <div class="bg-xonera-netherite border-4 border-xonera-stone rounded p-6 max-w-md w-full shadow-2xl relative my-8">
             <button onclick="closeModal('download')" class="absolute top-4 right-4 text-gray-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
-            <h3 id="download-modal-title" class="font-pixel text-xs text-sky-400 mb-6 flex items-center gap-2">
-                <span>📦</span> Adicionar Modpack / Arquivo
+            <h3 id="download-modal-title" class="font-pixel text-xs text-xonera-green mb-6 flex items-center gap-2">
+                <span>📦</span> Adicionar Modpack
             </h3>
             
             <form id="download-form" onsubmit="saveDownload(event)" class="space-y-4 text-sm">
                 <input type="hidden" id="download-id">
                 <div>
                     <label class="block text-xs font-semibold text-gray-400 mb-1">Nome do Modpack:</label>
-                    <input type="text" id="download-name" required placeholder="Ex: Skyblock Tech Extreme" class="w-full bg-mc-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-mc-green outline-none">
+                    <input type="text" id="download-name" required placeholder="Ex: Xomaps Potato Master" class="w-full bg-xonera-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-xonera-purple outline-none">
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-semibold text-gray-400 mb-1">Versão MC:</label>
-                        <input type="text" id="download-version" required placeholder="Ex: 1.20.1" class="w-full bg-mc-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-mc-green outline-none">
+                        <input type="text" id="download-version" required placeholder="Ex: 1.20.1" class="w-full bg-xonera-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-mc-green outline-none">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-gray-400 mb-1">Tamanho (Opcional):</label>
-                        <input type="text" id="download-size" placeholder="Ex: 142 MB" class="w-full bg-mc-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-mc-green outline-none">
+                        <label class="block text-xs font-semibold text-gray-400 mb-1">Tamanho aproximado:</label>
+                        <input type="text" id="download-size" placeholder="Ex: 95 MB" class="w-full bg-xonera-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-xonera-purple outline-none">
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-gray-400 mb-1">Link de Download:</label>
-                    <input type="url" id="download-url" required placeholder="Ex: https://curseforge.com/..." class="w-full bg-mc-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-mc-green outline-none">
+                    <label class="block text-xs font-semibold text-gray-400 mb-1">Link no CurseForge / Google Drive:</label>
+                    <input type="url" id="download-url" required placeholder="Ex: https://curseforge.com/..." class="w-full bg-xonera-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-xonera-purple outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-gray-400 mb-1">Descrição / Detalhes:</label>
-                    <textarea id="download-desc" rows="3" required placeholder="Lista de mods principais ou orientações de instalação..." class="w-full bg-mc-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-mc-green outline-none resize-none"></textarea>
+                    <label class="block text-xs font-semibold text-gray-400 mb-1">Por que esse modpack é brabo? (Descrição):</label>
+                    <textarea id="download-desc" rows="3" required placeholder="Ex: Roda em qualquer batata com mais de 100 mods de otimização..." class="w-full bg-xonera-dark border-2 border-zinc-800 rounded p-2.5 text-white focus:border-xonera-purple outline-none resize-none"></textarea>
                 </div>
 
                 <div class="pt-4 flex gap-3 font-pixel text-[10px]">
-                    <button type="submit" class="flex-grow mc-btn shadow-sky-950 bg-sky-600 hover:bg-sky-500 text-white py-3 rounded cursor-pointer">SALVAR ALTERAÇÕES</button>
+                    <button type="submit" class="flex-grow mc-btn shadow-green-950 bg-xonera-green hover:bg-green-500 text-white py-3 rounded cursor-pointer">SALVAR ALTERAÇÕES</button>
                     <button type="button" onclick="closeModal('download')" class="bg-zinc-800 hover:bg-zinc-700 text-gray-400 px-4 py-3 rounded cursor-pointer">CANCELAR</button>
                 </div>
             </form>
@@ -396,41 +419,41 @@
 
     <!-- NOTIFICAÇÕES PERSONALIZADAS -->
     <div id="notification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
-        <div class="bg-mc-stone border-4 border-mc-green-light px-6 py-4 rounded shadow-2xl flex items-center gap-3">
-            <span id="notif-icon" class="text-xl">🟩</span>
-            <span id="notif-text" class="font-pixel text-[10px] text-white">Ação Realizada!</span>
+        <div class="bg-xonera-netherite border-4 border-xonera-purple px-6 py-4 rounded shadow-2xl flex items-center gap-3">
+            <span id="notif-icon" class="text-xl">🟣</span>
+            <span id="notif-text" class="font-pixel text-[10px] text-white">Xonera salvou o código!</span>
         </div>
     </div>
 
     <!-- CODE SCRIPT -->
     <script>
-        // CONFIGURAÇÕES DE DADOS INICIAIS (BANCO DE DADOS EM LOCALSTORAGE)
+        // BANCO DE DADOS INICIAL DO XONERA MIL GRAU
         const DEFAULT_VIDEOS = [
             {
                 id: 1,
-                title: "100 DIAS no Survival Técnico Avançado do Nether",
-                url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                description: "Nesse vídeo mostro a evolução completa de uma base de netherite em cima da bedrock do nether usando automações brutas de redstone.",
-                duration: "45:20",
-                views: "35K",
+                title: "QUAL O PESO REAL DA ESPADA DO AVARITIA NO MINECRAFT??",
+                url: "https://www.youtube.com/watch?v=7RKs5Augg2Q",
+                description: "Nesse vídeo eu fiz as contas de matemática pra ver o peso real de carregar a Infinity Sword do Avaritia e quase explodi minha cabeça de leigo.",
+                duration: "08:15",
+                views: "3.5K",
                 featured: true
             },
             {
                 id: 2,
-                title: "Como Criar a Maior Farm de Ferro Automática (1.20)",
+                title: "Top 5 Modpacks LEVES para jogar com o seu amigo no PC Batata",
                 url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                description: "Tutorial passo a passo sem complicações para gerar mais de 4000 barras de ferro por hora no seu mundo survival vanilla.",
-                duration: "18:45",
-                views: "12K",
+                description: "Se o PC do seu amigo parece um microondas, manda esse vídeo e esses modpacks pra ele jogar liso sem travar nada!",
+                duration: "12:40",
+                views: "9.2K",
                 featured: false
             },
             {
                 id: 3,
-                title: "Testando os 5 Mods de Otimização Mais Bizarros",
-                url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                description: "Será que dá para atingir 1000 FPS usando renderizações alternativas no Minecraft moderno? Fizemos o teste!",
-                duration: "12:10",
-                views: "8.5K",
+                title: "Como funciona a Peneira Automática do Create na XOLANDIA",
+                url: "https://www.youtube.com/watch?v=TaAJq_Ufs2o",
+                description: "Fiz uma farm de recursos infinita na nossa nova série Xolandia usando apenas engrenagens e muita dor de cabeça.",
+                duration: "15:08",
+                views: "1.4K",
                 featured: false
             }
         ];
@@ -438,19 +461,27 @@
         const DEFAULT_DOWNLOADS = [
             {
                 id: 1,
-                name: "CraftZone Ultra Integration Pack",
-                version: "1.20.1",
-                size: "245 MB",
-                downloadUrl: "https://www.curseforge.com",
-                desc: "O modpack oficial da nossa série de sobrevivência. Traz foco total em tecnologia industrial (Create, Mekanism, Immersive Engineering) e otimização de performance com Shader Packs inclusos."
+                name: "Xomaps Potato Master",
+                version: "1.20.1 LITE",
+                size: "95 MB",
+                downloadUrl: "https://www.curseforge.com/minecraft/modpacks/xomaps-potato-master",
+                desc: "O modpack definitivo do Xonera! Menos de 100 mods selecionados a dedo e extremamente otimizados. Feito para rodar em qualquer batata com shaders leves instalados."
             },
             {
                 id: 2,
-                name: "Extreme RPG & Exploration Pack",
+                name: "Xomaps Decay (O Apocalipse)",
                 version: "1.19.2",
-                size: "180 MB",
-                downloadUrl: "https://www.curseforge.com",
-                desc: "Explore novas dimensões épicas, lute contra chefes colossais e gerencie suas habilidades de forma totalmente imersiva. Indicado para quem busca mais combate."
+                size: "165 MB",
+                downloadUrl: "https://www.curseforge.com/minecraft/modpacks/xomaps-decay",
+                desc: "Sobreviva em um mundo dominado pelo caos, ratos mutantes limpando seu baú, vampiros bizarros na noite e a presença real do Herobrine te vigiando das sombras. Tem coragem?"
+            },
+            {
+                id: 3,
+                name: "Xomembers RPG & Tech",
+                version: "1.20.1",
+                size: "210 MB",
+                downloadUrl: "https://www.curseforge.com/minecraft/modpacks/xomembers",
+                desc: "Uma mistura impecável de magia, exploração e tecnologia industrial (Create e Mekanism) com bosses insanos e progressão customizada."
             }
         ];
 
@@ -467,33 +498,49 @@
             setupHeroFeatured();
         };
 
+        // SUPER LEITOR DE ID DO YOUTUBE (Suporta Shorts, Mobile, Compartilhados, etc.)
+        function extractYouTubeId(url) {
+            if (!url) return null;
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|shorts\/|m\.youtube\.com\/watch\?v=)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+
+        // GERA LINK DE EMBED A PARTIR DO ID
+        function getEmbedUrl(videoId) {
+            return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0` : '';
+        }
+
+        // GERA A URL DA CAPA OFICIAL (THUMBNAIL) DO VIDEO
+        function getThumbnailUrl(videoId) {
+            return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
+        }
+
         // GESTÃO DE ABAS
         function switchTab(tabId) {
             activeTab = tabId;
-            
-            // Alterar seções
             ['home', 'videos', 'downloads'].forEach(t => {
                 const section = document.getElementById(`tab-${t}`);
                 const btn = document.getElementById(`tab-${t}-btn`);
                 
                 if (t === tabId) {
                     section.classList.remove('hidden');
-                    btn.classList.replace('bg-mc-netherite', 'bg-mc-green');
+                    btn.classList.replace('bg-zinc-800', 'bg-xonera-purple');
                     btn.classList.replace('text-gray-300', 'text-white');
-                    btn.classList.add('shadow-mc-green-dark');
+                    btn.classList.add('shadow-purple-950');
                     btn.classList.remove('shadow-zinc-950');
                 } else {
                     section.classList.add('hidden');
-                    btn.classList.replace('bg-mc-green', 'bg-mc-netherite');
+                    btn.classList.replace('bg-xonera-purple', 'bg-zinc-800');
                     btn.classList.replace('text-white', 'text-gray-300');
-                    btn.classList.remove('shadow-mc-green-dark');
+                    btn.classList.remove('shadow-purple-950');
                     btn.classList.add('shadow-zinc-950');
                 }
             });
         }
 
         // SISTEMA DE NOTIFICAÇÃO ESTILIZADA
-        function showNotification(message, icon = "🟩", isBlue = false) {
+        function showNotification(message, icon = "🟣", isGreen = false) {
             const toast = document.getElementById('notification');
             const toastText = document.getElementById('notif-text');
             const toastIcon = document.getElementById('notif-icon');
@@ -502,10 +549,10 @@
             toastText.textContent = message;
             toastIcon.textContent = icon;
 
-            if (isBlue) {
-                toastBorder.classList.replace('border-mc-green-light', 'border-sky-400');
+            if (isGreen) {
+                toastBorder.classList.replace('border-xonera-purple', 'border-xonera-green');
             } else {
-                toastBorder.classList.replace('border-sky-400', 'border-mc-green-light');
+                toastBorder.classList.replace('border-xonera-green', 'border-xonera-purple');
             }
 
             toast.classList.remove('translate-y-24', 'opacity-0');
@@ -517,31 +564,44 @@
             }, 3000);
         }
 
-        // CONVERSOR DE LINK DO YOUTUBE PARA EMBED SEGURO
-        function getEmbedUrl(url) {
-            try {
-                let videoId = '';
-                if (url.includes('youtube.com/watch')) {
-                    const urlParams = new URLSearchParams(new URL(url).search);
-                    videoId = urlParams.get('v');
-                } else if (url.includes('youtu.be/')) {
-                    videoId = url.split('youtu.be/')[1].split('?')[0];
-                } else if (url.includes('embed/')) {
-                    return url;
-                }
-                return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
-            } catch (e) {
-                return url;
-            }
-        }
-
-        // FUNÇÃO PARA ATUALIZAR O VIDEO EM DESTAQUE NO HERO
+        // CONFIGURAÇÃO DO VÍDEO DO HERO (TOPO)
+        let heroVideoId = '';
+        let heroVideoTitle = '';
         function setupHeroFeatured() {
             const featuredVideo = videos.find(v => v.featured);
             if (featuredVideo) {
-                document.getElementById('hero-iframe').src = getEmbedUrl(featuredVideo.url);
+                heroVideoId = extractYouTubeId(featuredVideo.url);
+                heroVideoTitle = featuredVideo.title;
+                
+                document.getElementById('hero-thumbnail').src = getThumbnailUrl(heroVideoId);
                 document.getElementById('hero-title').textContent = featuredVideo.title;
+            } else if (videos.length > 0) {
+                heroVideoId = extractYouTubeId(videos[0].url);
+                heroVideoTitle = videos[0].title;
+                document.getElementById('hero-thumbnail').src = getThumbnailUrl(heroVideoId);
+                document.getElementById('hero-title').textContent = videos[0].title;
             }
+        }
+
+        // DA PLAY NO VÍDEO DESTAQUE ABRE NO MODO CINEMA
+        function playHeroVideo() {
+            if (heroVideoId) {
+                openCinema(heroVideoId, heroVideoTitle);
+            }
+        }
+
+        // CONTROLES DE REPRODUÇÃO EM MODO CINEMA (MODAL)
+        function openCinema(videoId, title) {
+            const embedUrl = getEmbedUrl(videoId);
+            document.getElementById('cinema-iframe').src = embedUrl;
+            document.getElementById('cinema-title').textContent = title;
+            document.getElementById('cinema-modal').classList.remove('hidden');
+        }
+
+        // FECHAR MODAL CINEMA
+        function closeCinema() {
+            document.getElementById('cinema-modal').classList.add('hidden');
+            document.getElementById('cinema-iframe').src = '';
         }
 
         // --- SISTEMA DE AUTENTICAÇÃO MOCK ---
@@ -561,9 +621,9 @@
                 localStorage.setItem('cz_isAdmin', 'true');
                 closeModal('login');
                 checkAdminStatus();
-                showNotification("Acesso Administrativo Liberado!", "🔑");
+                showNotification("Acesso Liberado, Chefe!", "🔑", true);
             } else {
-                showNotification("Senha inválida!", "❌");
+                showNotification("Senha errada! Tenta de novo.", "❌");
             }
             document.getElementById('admin-pass').value = '';
         }
@@ -572,7 +632,7 @@
             isAdmin = false;
             localStorage.setItem('cz_isAdmin', 'false');
             checkAdminStatus();
-            showNotification("Saiu do Painel Administrativo", "🔒", true);
+            showNotification("Saiu do modo editor", "🔒");
         }
 
         function checkAdminStatus() {
@@ -592,7 +652,7 @@
             renderAll();
         }
 
-        // --- RENDERIZADORES DE GRID ---
+        // --- RENDERIZADORES DE GRID COM CAPAS ---
 
         function renderAll() {
             renderVideos();
@@ -606,14 +666,15 @@
             if (videos.length === 0) {
                 container.innerHTML = `
                     <div class="col-span-full py-12 text-center text-gray-500 font-pixel text-xs">
-                        NENHUM VÍDEO NO BANCO DE DADOS...
+                        NENHUM VÍDEO POSTADO...
                     </div>`;
                 return;
             }
 
             videos.forEach(v => {
-                const embedUrl = getEmbedUrl(v.url);
-                const isFeaturedMark = v.featured ? '<span class="absolute top-2 left-2 bg-yellow-500 text-black text-[9px] font-pixel px-2 py-0.5 rounded shadow z-10">⭐ HERO DESTAQUE</span>' : '';
+                const videoId = extractYouTubeId(v.url);
+                const thumbUrl = getThumbnailUrl(videoId);
+                const isFeaturedMark = v.featured ? '<span class="absolute top-2 left-2 bg-xonera-purple text-white text-[9px] font-pixel px-2 py-0.5 rounded shadow z-10">⭐ HERO DESTAQUE</span>' : '';
                 
                 let adminControls = '';
                 if (isAdmin) {
@@ -629,19 +690,29 @@
                     `;
                 }
 
+                // Se for um link do TikTok, abrimos o link diretamente. Se for YouTube, usamos o modo Cinema.
+                const clickAction = videoId ? `openCinema('${videoId}', '${v.title.replace(/'/g, "\\'")}')` : `window.open('${v.url}', '_blank')`;
+                const playIcon = videoId ? `<i class="fa-solid fa-play text-white text-lg ml-0.5"></i>` : `<i class="fa-brands fa-tiktok text-white text-lg"></i>`;
+                const customThumb = videoId ? thumbUrl : 'https://placehold.co/600x400/09090b/a855f7?text=ASSISTIR+NO+TIKTOK';
+
                 container.innerHTML += `
-                    <div class="bg-mc-stone border-4 border-mc-netherite hover:border-mc-green rounded-lg overflow-hidden shadow-lg flex flex-col justify-between transition group relative">
+                    <div class="bg-xonera-netherite border-4 border-xonera-stone hover:border-xonera-purple rounded-lg overflow-hidden shadow-lg flex flex-col justify-between transition group relative">
                         <div>
-                            <div class="aspect-video bg-black relative">
+                            <div onclick="${clickAction}" class="aspect-video bg-black relative overflow-hidden cursor-pointer group/card">
                                 ${isFeaturedMark}
-                                <iframe class="w-full h-full" src="${embedUrl}" title="YouTube player" frameborder="0" allowfullscreen></iframe>
+                                <img src="${customThumb}" class="w-full h-full object-cover transition duration-300 group-hover/card:scale-105" alt="Thumbnail">
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition duration-300">
+                                    <div class="w-12 h-12 bg-xonera-purple rounded flex items-center justify-center shadow">
+                                        ${playIcon}
+                                    </div>
+                                </div>
                             </div>
                             <div class="p-4 space-y-2">
                                 <div class="flex items-center justify-between text-xs text-gray-500 font-semibold">
                                     <span>⏱️ ${v.duration || '00:00'}</span>
-                                    <span>👁️ ${v.views || '0'} visualizações</span>
+                                    <span>👁️ ${v.views || '1K'} Views</span>
                                 </div>
-                                <h3 class="font-bold text-white text-base leading-snug group-hover:text-mc-green-light transition">${v.title}</h3>
+                                <h3 class="font-bold text-white text-base leading-snug group-hover:text-xonera-purple-light transition">${v.title}</h3>
                                 <p class="text-gray-400 text-sm line-clamp-2">${v.description || 'Sem descrição'}</p>
                             </div>
                         </div>
@@ -660,7 +731,7 @@
             if (downloads.length === 0) {
                 container.innerHTML = `
                     <div class="col-span-full py-12 text-center text-gray-500 font-pixel text-xs">
-                        NENHUM DOWNLOAD NO BANCO DE DADOS...
+                        NENHUM MODPACK CADASTRADO...
                     </div>`;
                 return;
             }
@@ -681,20 +752,20 @@
                 }
 
                 container.innerHTML += `
-                    <div class="bg-mc-stone border-4 border-mc-netherite hover:border-sky-400 rounded-lg p-6 shadow-lg flex flex-col justify-between transition group relative">
+                    <div class="bg-xonera-netherite border-4 border-xonera-stone hover:border-xonera-green rounded-lg p-6 shadow-lg flex flex-col justify-between transition group relative">
                         <div class="space-y-4">
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition">${d.name}</h3>
-                                    <span class="text-xs text-gray-500">Tamanho do Arquivo: ${d.size || 'N/A'}</span>
+                                    <h3 class="text-lg font-bold text-white group-hover:text-xonera-green transition">${d.name}</h3>
+                                    <span class="text-xs text-gray-500">Tamanho: ${d.size || 'N/A'}</span>
                                 </div>
-                                <span class="bg-sky-950 text-sky-400 border border-sky-800 font-pixel text-[10px] px-3 py-1.5 rounded-sm">MC ${d.version}</span>
+                                <span class="bg-purple-950 text-xonera-purple-light border border-purple-800 font-pixel text-[10px] px-3 py-1.5 rounded-sm">${d.version}</span>
                             </div>
                             <p class="text-gray-400 text-sm leading-relaxed">${d.desc}</p>
                         </div>
                         <div class="mt-6">
-                            <a href="${d.downloadUrl}" target="_blank" class="w-full text-center mc-btn shadow-sky-950 bg-sky-600 hover:bg-sky-500 text-white font-pixel text-xs py-3 rounded block active:translate-y-1">
-                                <i class="fa-solid fa-download mr-1"></i> BAIXAR DE GRAÇA
+                            <a href="${d.downloadUrl}" target="_blank" class="w-full text-center mc-btn shadow-purple-950 bg-xonera-purple hover:bg-xonera-purple-light text-white font-pixel text-xs py-3 rounded block active:translate-y-1">
+                                <i class="fa-solid fa-download mr-1"></i> BAIXAR VIA CURSEFORGE
                             </a>
                             ${adminControls}
                         </div>
@@ -716,20 +787,17 @@
             const featured = document.getElementById('video-featured').checked;
 
             if (featured) {
-                // Remove destaque de todos os outros vídeos antes de marcar o novo
                 videos.forEach(v => v.featured = false);
             }
 
             if (id) {
-                // Atualizar
                 const idx = videos.findIndex(v => v.id == id);
                 videos[idx] = { id: parseInt(id), title, url, duration, views, description, featured };
-                showNotification("Vídeo Atualizado!", "💾");
+                showNotification("Vídeo Atualizado no Banco!", "💾", true);
             } else {
-                // Criar
                 const newId = videos.length > 0 ? Math.max(...videos.map(v => v.id)) + 1 : 1;
                 videos.push({ id: newId, title, url, duration, views, description, featured });
-                showNotification("Vídeo Adicionado com Sucesso!", "🎉");
+                showNotification("Mais um vídeo postado!", "🎉", true);
             }
 
             localStorage.setItem('cz_videos', JSON.stringify(videos));
@@ -755,17 +823,16 @@
         }
 
         function deleteVideo(id) {
-            if (confirm("Deseja realmente apagar este vídeo permanentemente do banco de dados?")) {
+            if (confirm("Vai mesmo deletar esse vídeo do sistema, leigo?")) {
                 const isFeatured = videos.find(v => v.id === id)?.featured;
                 videos = videos.filter(v => v.id !== id);
                 
-                // Se o vídeo deletado era o destaque, escolhe o primeiro restante como destaque
                 if (isFeatured && videos.length > 0) {
                     videos[0].featured = true;
                 }
 
                 localStorage.setItem('cz_videos', JSON.stringify(videos));
-                showNotification("Vídeo removido com sucesso.", "🗑️", true);
+                showNotification("Vídeo removido da grade.", "🗑️");
                 renderAll();
                 setupHeroFeatured();
             }
@@ -783,15 +850,13 @@
             const desc = document.getElementById('download-desc').value;
 
             if (id) {
-                // Atualizar
                 const idx = downloads.findIndex(d => d.id == id);
                 downloads[idx] = { id: parseInt(id), name, version, size, downloadUrl, desc };
-                showNotification("Modpack Atualizado!", "💾");
+                showNotification("Modpack Atualizado!", "💾", true);
             } else {
-                // Criar
                 const newId = downloads.length > 0 ? Math.max(...downloads.map(d => d.id)) + 1 : 1;
                 downloads.push({ id: newId, name, version, size, downloadUrl, desc });
-                showNotification("Modpack Postado!", "🎉");
+                showNotification("Novo Modpack Disponível!", "🎉", true);
             }
 
             localStorage.setItem('cz_downloads', JSON.stringify(downloads));
@@ -815,10 +880,10 @@
         }
 
         function deleteDownload(id) {
-            if (confirm("Apagar permanentemente este download?")) {
+            if (confirm("Quer mesmo apagar esse arquivo? O pessoal vai reclamar!")) {
                 downloads = downloads.filter(d => d.id !== id);
                 localStorage.setItem('cz_downloads', JSON.stringify(downloads));
-                showNotification("Arquivo removido do servidor", "🗑️", true);
+                showNotification("Arquivo removido do ar", "🗑️");
                 renderAll();
             }
         }
